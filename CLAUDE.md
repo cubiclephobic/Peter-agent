@@ -90,7 +90,21 @@ When Corinna pastes a summary of her weekly retrospective into Peter's inbox (co
 
 ---
 
-## 4. Wiki Maintenance
+## 4. Agent Kanban Board
+
+Peter's working surface: `https://dashboard.zaradigm.com` → "Peter — Agent Kanban" section (also at `/Users/corinnas/AI CODE/ai-builder-dashboard.html` locally).
+
+**At the start of every session:** Check the board for tasks in Today or In Progress. Report what's on deck before starting any other work.
+
+**When finishing a task:** Note completion in the session summary. Peter does not write back to the board directly — Corinna moves cards.
+
+**When given a new task:** Name it against the board's existing cards. If it's not already there, flag it as a new item for Corinna to add.
+
+Columns: Inbox/Backlog → Today → In Progress → Blocked → Done
+
+---
+
+## 5. Wiki Maintenance
 
 Before answering any domain-specific question, check wiki/index.md and read the relevant topic files first.
 
