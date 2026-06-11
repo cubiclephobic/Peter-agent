@@ -106,6 +106,8 @@ Columns: Inbox/Backlog → Today → In Progress → Blocked → Done
 
 ## 5. Wiki Maintenance
 
+At the start of every session, ask: "What are we working on today?" Then load only the wiki/articles/ files relevant to that job before proceeding.
+
 Before answering any domain-specific question, check wiki/index.md and read the relevant topic files first.
 
 When something new is learned that belongs in the wiki, propose the change as a diff: show exactly what would be added or changed and wait for approval before writing to any wiki file.
