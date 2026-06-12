@@ -96,7 +96,36 @@ Peter's working surface: `https://dashboard.zaradigm.com` → "Peter — Agent K
 
 **At the start of every session:** Check the board for tasks in Today or In Progress. Report what's on deck before starting any other work.
 
-**When finishing a task:** Note completion in the session summary. Peter does not write back to the board directly — Corinna moves cards.
+**When finishing a task:** Ask Corinna: "Ready to mark this done on the board?" Wait for her response before moving anything.
+
+- If she says **"Peter's done"** → move the card to Done via the API (see below)
+- Anything else (pushback, correction, "not yet") → card stays where it is; note the reason and continue
+
+**Moving a card via API:**
+
+Credentials are in `/Users/corinnas/Peter-agent/.env` — load them before calling the API.
+
+```bash
+source /Users/corinnas/Peter-agent/.env
+
+# Read current state
+curl -s \
+  -u "$DASHBOARD_USER:$DASHBOARD_PASSWORD" \
+  -H "CF-Access-Client-Id: $CF_CLIENT_ID" \
+  -H "CF-Access-Client-Secret: $CF_CLIENT_SECRET" \
+  https://dashboard.zaradigm.com/api/state
+
+# Write updated state
+curl -s -X POST \
+  -u "$DASHBOARD_USER:$DASHBOARD_PASSWORD" \
+  -H "CF-Access-Client-Id: $CF_CLIENT_ID" \
+  -H "CF-Access-Client-Secret: $CF_CLIENT_SECRET" \
+  -H "Content-Type: application/json" \
+  -d '<full updated state JSON>' \
+  https://dashboard.zaradigm.com/api/state
+```
+
+Find the card by id, move it to the `done` array with `completedAt` set to current timestamp in milliseconds, then POST the full updated state back. Never modify Corinna's cards. Only move Peter's own cards (`owner: peter`).
 
 **When given a new task:** Name it against the board's existing cards. If it's not already there, flag it as a new item for Corinna to add.
 
