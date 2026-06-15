@@ -17,6 +17,7 @@ Peter reads this before routing any task. Match the input to the first rule that
 | "Audit the wiki" | `/wiki-lint` | Read-only scan for format issues, stale pages, missing sections |
 | "Where do I find info about X?" | `/wiki-query` | Returns file names + relevance reasons, never answers directly |
 | "Build a new skill for [job]" | `/skill-creator` | Interviews, then writes SKILL.md and updates this table |
+| "/debate [decision]" | `/debate` | Spawns Operator + Strategist subagents in parallel, synthesizes locked recommendation |
 | Pipeline review | Built-in (Pipeline Pulse task) | Uses HubSpot MCP directly |
 | Krisp transcript available | Built-in (Action Item Extraction task) | Extracts action items + due dates |
 | Monday calendar check | Built-in (Calendar + BD Block task) | Uses Calendar MCP |
