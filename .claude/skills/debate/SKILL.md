@@ -1,6 +1,6 @@
 # debate
 
-Spawn two persona subagents to argue opposite sides of a decision, then spawn a judge to score both arguments, then synthesize a locked recommendation weighted by the scores.
+Spawn two persona subagents to argue opposite sides of a decision, then spawn a judge to deliver plain-language judgment on both arguments, then synthesize a locked recommendation informed by that judgment.
 
 Run as: `/debate [decision or question]`
 
@@ -62,49 +62,32 @@ Structure your output:
 
 ### 3. Spawn the judge subagent (after both personas return)
 
-Pass the judge both arguments in full, plus the scoring instructions below.
+Pass the judge both arguments in full, plus the instructions below.
 
 ---
 
 **Persona C — The Judge**
 
-You are an impartial evaluator. You have no stake in the decision. Your job is to score each argument on three dimensions and give one line of reasoning per score. Do not recommend. Do not editorialize. Score only.
+You are an impartial evaluator. You have no stake in the decision. Your job is to deliver one paragraph of plain-language judgment on both arguments. Do not recommend. Do not use scores, ratings, or structured lists.
 
-Score The Operator and The Strategist on each of the following, 1–5:
+Your paragraph must address:
+- Which side had stronger evidence — and why the other side's evidence was weaker or missing
+- Where either argument was too soft, overreached, or missed something important
+- Whether the case for a clear winner holds up, or whether there is a genuine gap that the synthesis should flag
 
-- **Evidence quality** (1 = assertion only, 5 = specific, grounded, verifiable)
-- **Logical soundness** (1 = conclusion doesn't follow from premises, 5 = tight and internally consistent)
-- **Handling of the other side's strongest point** (1 = ignored it, 5 = directly addressed and meaningfully countered it)
-
-**Output format — strict:**
-
-**The Operator**
-- Evidence quality: [score] — [one line]
-- Logical soundness: [score] — [one line]
-- Handling opposing strongest point: [score] — [one line]
-- **Total: [X/15]**
-
-**The Strategist**
-- Evidence quality: [score] — [one line]
-- Logical soundness: [score] — [one line]
-- Handling opposing strongest point: [score] — [one line]
-- **Total: [X/15]**
-
-**Which argument is stronger and why:** one sentence only.
+Write as a plain paragraph. No bullet points. No scores. No labels like "Evidence quality:" or "Logical soundness:". Judgment only — specific and direct.
 
 ---
 
 ### 4. Synthesize and lock a recommendation
 
-Use the judge's scores to weight the synthesis. If one side scores 3+ points higher overall, its framing should drive the recommendation. If scores are within 2 points, treat the arguments as roughly equal and let the decision context determine the call. State the scores briefly before the synthesis.
-
-After receiving the judge's scores, produce the synthesis. Do not show a transcript of the full debate. Pull only the sharpest points from each side.
+After receiving the judge's paragraph, produce the synthesis. Let the judge's read inform which side's framing drives the recommendation — if the judge found one argument clearly stronger, weight accordingly; if the judge found both lacking in different ways, name the gap in the real tension line. Do not show a transcript of the full debate. Pull only the sharpest points from each side.
 
 **Synthesis format (under 400 words total including persona outputs):**
 
 ---
 
-**Scores:** The Operator [X/15] · The Strategist [X/15]
+**The Judge's read:** [paragraph from judge subagent, reproduced in full]
 
 **The Operator says:** [strongest 1–2 points, condensed]
 
@@ -122,5 +105,5 @@ After receiving the judge's scores, produce the synthesis. Do not show a transcr
 
 - Always lock a recommendation. Never land on "it depends" without immediately resolving what it depends on and which way that resolves.
 - Do not pad the synthesis. If one side has a clearly weaker case, say so.
-- Do not moralize. The Operator and Strategist argue; the Judge scores; Peter decides. Corinna acts.
+- Do not moralize. The Operator and Strategist argue; the Judge reads; Peter decides. Corinna acts.
 - Never recommend an action that requires sending, publishing, or committing on Corinna's behalf without her explicit approval step named in the recommendation.
