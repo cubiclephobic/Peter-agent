@@ -1,6 +1,6 @@
 # debate
 
-Spawn two persona subagents to argue opposite sides of a decision, then synthesize a locked recommendation.
+Spawn two persona subagents to argue opposite sides of a decision, then spawn a judge to score both arguments, then synthesize a locked recommendation weighted by the scores.
 
 Run as: `/debate [decision or question]`
 
@@ -60,13 +60,51 @@ Structure your output:
 
 ---
 
-### 3. Synthesize and lock a recommendation
+### 3. Spawn the judge subagent (after both personas return)
 
-After receiving both subagent outputs, produce the synthesis. Do not show a transcript of the full debate. Pull only the sharpest points from each side.
+Pass the judge both arguments in full, plus the scoring instructions below.
+
+---
+
+**Persona C — The Judge**
+
+You are an impartial evaluator. You have no stake in the decision. Your job is to score each argument on three dimensions and give one line of reasoning per score. Do not recommend. Do not editorialize. Score only.
+
+Score The Operator and The Strategist on each of the following, 1–5:
+
+- **Evidence quality** (1 = assertion only, 5 = specific, grounded, verifiable)
+- **Logical soundness** (1 = conclusion doesn't follow from premises, 5 = tight and internally consistent)
+- **Handling of the other side's strongest point** (1 = ignored it, 5 = directly addressed and meaningfully countered it)
+
+**Output format — strict:**
+
+**The Operator**
+- Evidence quality: [score] — [one line]
+- Logical soundness: [score] — [one line]
+- Handling opposing strongest point: [score] — [one line]
+- **Total: [X/15]**
+
+**The Strategist**
+- Evidence quality: [score] — [one line]
+- Logical soundness: [score] — [one line]
+- Handling opposing strongest point: [score] — [one line]
+- **Total: [X/15]**
+
+**Which argument is stronger and why:** one sentence only.
+
+---
+
+### 4. Synthesize and lock a recommendation
+
+Use the judge's scores to weight the synthesis. If one side scores 3+ points higher overall, its framing should drive the recommendation. If scores are within 2 points, treat the arguments as roughly equal and let the decision context determine the call. State the scores briefly before the synthesis.
+
+After receiving the judge's scores, produce the synthesis. Do not show a transcript of the full debate. Pull only the sharpest points from each side.
 
 **Synthesis format (under 400 words total including persona outputs):**
 
 ---
+
+**Scores:** The Operator [X/15] · The Strategist [X/15]
 
 **The Operator says:** [strongest 1–2 points, condensed]
 
@@ -80,9 +118,9 @@ After receiving both subagent outputs, produce the synthesis. Do not show a tran
 
 ---
 
-### 4. Guardrails
+### 5. Guardrails
 
 - Always lock a recommendation. Never land on "it depends" without immediately resolving what it depends on and which way that resolves.
 - Do not pad the synthesis. If one side has a clearly weaker case, say so.
-- Do not moralize. The Operator and Strategist argue; Peter decides. Corinna acts.
+- Do not moralize. The Operator and Strategist argue; the Judge scores; Peter decides. Corinna acts.
 - Never recommend an action that requires sending, publishing, or committing on Corinna's behalf without her explicit approval step named in the recommendation.
