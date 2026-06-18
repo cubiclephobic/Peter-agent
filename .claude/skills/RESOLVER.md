@@ -18,11 +18,23 @@ Peter reads this before routing any task. Match the input to the first rule that
 | "Where do I find info about X?" | `/wiki-query` | Returns file names + relevance reasons, never answers directly |
 | "Build a new skill for [job]" | `/skill-creator` | Interviews, then writes SKILL.md and updates this table |
 | "/debate [decision]" | `/debate` | Spawns Operator + Strategist subagents in parallel, synthesizes locked recommendation |
+| "/situation-assessment [subject]" | `/situation-assessment` | Consulting OS — Diagnose stage. Current state, what's moving/stuck, context. On-demand only, not auto-triggered. |
+| "/growth-barriers [subject]" | `/growth-barriers` | Consulting OS — Diagnose stage. Root-cause barriers ranked by impact x tractability. Chains from situation-assessment if one exists. |
+| "/assumption-audit [plan]" | `/assumption-audit` | Consulting OS — Diagnose stage. Stress-tests load-bearing assumptions before commitment. |
 | Pipeline review | Built-in (Pipeline Pulse task) | Uses HubSpot MCP directly |
 | Krisp transcript available | Built-in (Action Item Extraction task) | Extracts action items + due dates |
 | Monday calendar check | Built-in (Calendar + BD Block task) | Uses Calendar MCP |
 | Partner/client session just ended | Built-in (Follow-up Draft task) | Gmail draft via Gmail MCP |
 | Retro summary pasted to inbox | Built-in (Retro Pattern Surfacing task) | Reads from corinnas.agent@gmail.com |
+
+---
+
+## Consulting OS (Corinna-facing, on-demand only)
+
+Engagement backbone: Diagnose → Map → Choose → Execute → Govern → Communicate. Built one stage at a time; not wired into Peter's recurring jobs. These are deliverable tools Corinna invokes when working a client engagement or a strategic call for Zaradigm — Peter does not auto-trigger them.
+
+- **Diagnose:** `situation-assessment`, `growth-barriers`, `assumption-audit` (built)
+- **Map, Choose, Execute, Govern, Communicate:** pending — built only after the Diagnose stage is reviewed and approved.
 
 ---
 
