@@ -19,6 +19,7 @@ Peter reads this before routing any task. Match the input to the first rule that
 | "Build a new skill for [job]" | `/skill-creator` | Interviews, then writes SKILL.md and updates this table |
 | "/debate [decision]" | `/debate` | Spawns Operator + Strategist subagents in parallel, synthesizes locked recommendation |
 | "/run-test-cases [agent-name]" | `/run-test-cases` | Collects 2 test prompts, runs them against the matching `.claude/agents/[agent-name].md` definition, saves inputs/outputs/traces to evals/runs/, logs to logs/[agent-name]/ |
+| "Run eval-output for [agent-name]" | `/eval-output` | Scores the agent's latest evals/runs/ outputs against evals/rubrics/[agent-name].md, logs to evals/evaluations.md, queues fixes for sub-5 dimensions, links diagram |
 | Pipeline review | Built-in (Pipeline Pulse task) | Uses HubSpot MCP directly |
 | Krisp transcript available | Built-in (Action Item Extraction task) | Extracts action items + due dates |
 | Monday calendar check | Built-in (Calendar + BD Block task) | Uses Calendar MCP |
