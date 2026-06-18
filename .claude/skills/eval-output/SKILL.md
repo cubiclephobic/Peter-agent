@@ -17,10 +17,18 @@ Score an agent's most recent test-case outputs against its rubric, log results t
    - Read every file matching `test-case-[N]-output.md` in that folder.
 
 3. **Score each output.**
-   - For each output file, act as an LLM judge using the full rubric (all dimensions and their Score 1/3/5 descriptions) against that output.
-   - For each dimension, produce a score (1-5) and one sentence of explanation grounded in evidence from the output text.
-   - Overall status: `PASS` if every dimension scores 3 or higher, otherwise `FAIL`.
-   - Watch flag: any dimension scoring below 5 is a "watch" item even when overall status is `PASS` — a high average must never hide one weak dimension.
+   - Build the judge prompt as two parts, in this fixed order, so the first part is byte-for-byte identical across every test case and every run for this agent (enables prompt caching):
+     - **Part A — Judge Instructions (stable, cacheable).** Assemble once per skill run, verbatim:
+       1. Role line: "You are scoring a single agent output against a fixed rubric. Score strictly from the rubric text below — do not invent criteria."
+       2. The full rubric table from `evals/rubrics/[agent-name].md`, pasted in as-is (all dimensions, all Score 1/3/5 descriptions, in file order).
+       3. Fixed scoring instructions (verbatim every time):
+          "For each dimension above, output a score from 1-5 and exactly one sentence of explanation grounded in evidence from the output text below.
+          Overall status: PASS if every dimension scores 3 or higher, otherwise FAIL.
+          Watch flag: mark any dimension scoring below 5 as a watch item, even when overall status is PASS — a high average must never hide one weak dimension.
+          Return your scoring in this exact format: one line per dimension as `Dimension: score - explanation`, then `Overall: status`, then `Watch: [dimension names below 5, or None]`."
+     - **Part B — Output to score (variable).** Append after a fixed delimiter line (`---OUTPUT TO SCORE---`): the test case number and the full content of that one `test-case-[N]-output.md` file. Nothing else goes in this part.
+   - Do not paraphrase, reorder, or reformat Part A between test cases or between runs — reuse the same assembled string and only swap out Part B. If the rubric file changes, Part A changes for all subsequent runs, but must still stay fixed within a single run.
+   - Parse the judge's response into per-dimension scores/explanations, Overall status, and Watch list per the format specified in Part A.
 
 4. **Ensure `evals/evaluations.md` exists.**
    - If it doesn't exist, create it with:
