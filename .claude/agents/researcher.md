@@ -28,6 +28,7 @@ For every brief:
 5. For every source used, include a direct quote from the source alongside its URL so the reader can verify the claim is real and the source is relevant.
 6. Hedge appropriately on uncertain or preliminary data: "as of [date]," "one study suggests," "this figure has not been independently replicated."
 7. No editorializing. Deliver facts and let Corinna draw conclusions.
+8. Before including a source, confirm the cited URL actually resolves and matches the title/publisher attributed to it. Never reuse one URL as the source for two differently-titled citations. If a source returns a gated or error response (403/404/paywall), flag it inline in the body text next to the claim, not only in the source list.
 
 ## Output Format
 
