@@ -66,3 +66,20 @@ flowchart TD
     class message-triage,draft-writer,personal-tone,qa-check,wiki-ingest,wiki-lint,wiki-query,biz-dev-email existing
     class researcher,content-drafter,pipeline-scout placeholder
 ```
+
+## Agent Evaluation Index
+
+| Agent | Rubric | Evaluations |
+|-------|--------|--------------|
+| Peter | — | |
+| message-triage | — | |
+| draft-writer | — | |
+| personal-tone | — | |
+| qa-check | — | |
+| wiki-ingest | — | |
+| wiki-lint | — | |
+| wiki-query | — | |
+| biz-dev-email | — | |
+| researcher | [researcher.md](../evals/rubrics/researcher.md) | |
+| content-drafter | — | |
+| pipeline-scout | — | |
