@@ -80,6 +80,6 @@ flowchart TD
 | wiki-lint | — | |
 | wiki-query | — | |
 | biz-dev-email | — | |
-| researcher | [researcher.md](../evals/rubrics/researcher.md) | |
+| researcher | [researcher.md](../evals/rubrics/researcher.md) | [evals](../evals/evaluations.md#researcher) |
 | content-drafter | — | |
 | pipeline-scout | — | |
