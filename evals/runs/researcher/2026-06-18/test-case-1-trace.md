@@ -1,9 +1,8 @@
-1. Interpreted the prompt as in-scope for the researcher's defined domain (executive coaching markets) and Zaradigm B2B audience — proceeded without escalating back to Peter.
-2. Ran multiple web searches/fetches (10 tool calls total) to gather primary sources on HR buyer priorities, objections, and ROI evidence for mid-market coaching programs.
-3. Attempted to fetch Loeb Leadership and Global Coach Group articles; both returned gated/403 and were still listed in the source list with that caveat noted rather than silently dropped.
-4. Selected ICF, Vistage, SHRM-adjacent, and named-author/data-backed sources over generic listicles, consistent with the agent's "Research Standards" (no undated/uncredentialed sources used as primary claims, except one explicitly flagged as "undated").
-5. Organized findings by theme (what HR cares about / objections / outcomes that unlock yes) rather than by source, per output format instructions.
-6. Flagged a "Conflicting signals" note explicitly (5–7x vs. 10–49x ROI variance) instead of smoothing it over.
-7. Included a "Gaps" line naming what couldn't be found (pricing model influence on purchasing) and why (would require gated HR.com/Gartner access).
-8. Did not save the brief to wiki/research/YYYY-MM-DD-[slug].md or return a file path — deviated from its own "Save the brief" output step, likely because the appended run-test-cases instruction ("do not commit files... unless explicit subject of the prompt") was interpreted as also covering this internal save step.
-9. Returned the brief and source list inline as plain text, consistent with the appended instruction to return full response as plain text.
+1. Treated the question as in-domain (executive development/coaching markets, Zaradigm B2B audience) and proceeded without escalating.
+2. Ran 24 tool calls (web searches/fetches) — notably more than the prior run on the same prompt, casting a wider net across Gartner, ICF, LinkedIn Learning, and several practitioner blogs.
+3. Applied the agent's new "Research Standards" step (added after the prior eval) by explicitly tagging gated/inaccessible sources inline in the source list with "[GATED]" markers rather than silently treating them as accessible.
+4. Still cited a small number of sources with "date not specified," consistent with the instruction to hedge on uncertain data, but did not always flag this in the body text next to the specific claim — only in the source list.
+5. Organized findings by theme (prioritization criteria, objections, outcomes) rather than by source, per output format instructions.
+6. Explicitly flagged a "Conflicting Signals" section reconciling the 5-7x ROI stat against the 75%-programs-don't-work stat, instead of smoothing over the contradiction.
+7. Closed with an explicit "Gaps" section naming what wasn't found (small-business-specific budget thresholds, solo vs. team coach preference, sector-specific data).
+8. Did not save the brief to wiki/research/ or return a file path, consistent with the appended run-test-cases instruction restricting file writes/commits to the explicit subject of the prompt.

@@ -1,8 +1,8 @@
-1. Treated the buying-process question as in-domain (executive development / sponsored coaching markets) and proceeded without routing back to Peter.
-2. Ran 9 tool calls (web searches/fetches) covering initiation, budget approval, and vendor selection separately, then synthesized.
-3. Sourced claims from SHRM, Faeth Coaching, Keys Advisory, Right.com, Tandem Coaching, Procurement Tactics, and Corporate Visions — mix of practitioner and procurement-process sources, each cited with a direct quote and URL per the agent's sourcing standard.
-4. Organized the brief by the three explicit sub-questions in the prompt (who initiates, who approves budget, vendor selection) rather than a generic theme list — closely mirrored the prompt's own structure.
-5. Added a "Critical Signal for Zaradigm" section translating findings into audience-specific implications, consistent with the instruction to frame relevance to the Zaradigm B2B audience.
-6. Flagged inability to access paywalled practitioner guides (Tandem, Jody Michael Associates, Right.com premium) as a Gaps item, and noted a structural caveat (nonprofit vs. for-profit approval differs) rather than presenting one buying process as universal.
-7. Did not save the brief to wiki/research/ or return a file path/3-sentence summary — same deviation from the agent's own "Save the brief" step as test case 1.
-8. Returned full plain-text response with brief + source list, complying with the appended run-test-cases instruction.
+1. Treated the buying-process question as in-domain and proceeded without routing back to Peter.
+2. Ran 12 tool calls covering initiation, budget approval, and vendor selection as separate research threads before synthesizing.
+3. Cited Washington State University HR Services and University of Michigan HR as primary sources for initiation/approval mechanics — more institutional/primary than the prior run's mix of blogs.
+4. Marked at least one source "[gated]" inline in the source list (Tandem Coach buyer's guide), again consistent with the updated Research Standards instruction to flag inaccessible sources rather than cite them as fully verified.
+5. Organized the brief by the three explicit sub-questions in the prompt (who initiates, who approves budget, vendor selection), closely mirroring the prompt's structure, plus added unprompted sections on budget ranges and decision-committee composition.
+6. Added a "Conflicting Signals" section addressing self-directed vs. HR-initiated coaching paths, and explicitly called out which pattern is more likely for Zaradigm's target segment (small-to-mid business).
+7. Closed with a "Gaps" section naming exactly what wasn't found (sales cycle length, coaching-specific buying-committee research, small-business RFP usage).
+8. Did not save the brief to wiki/research/ or return a file path, consistent with the appended run-test-cases instruction.
