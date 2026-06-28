@@ -21,6 +21,10 @@ Peter reads this before routing any task. Match the input to the first rule that
 | "/situation-assessment [subject]" | `/situation-assessment` | Consulting OS — Diagnose stage. Current state, what's moving/stuck, context. On-demand only, not auto-triggered. |
 | "/growth-barriers [subject]" | `/growth-barriers` | Consulting OS — Diagnose stage. Root-cause barriers ranked by impact x tractability. Chains from situation-assessment if one exists. |
 | "/assumption-audit [plan]" | `/assumption-audit` | Consulting OS — Diagnose stage. Stress-tests load-bearing assumptions before commitment. |
+| "/market-mapping [market]" | `/market-mapping` | Consulting OS — Map stage. Value chain, ecosystem players, structural forces. Routes external data to researcher subagent. |
+| "/competitive-intel [subject]" | `/competitive-intel` | Consulting OS — Map stage. Competitor profiles, whitespace, biggest threat. Routes specific competitor data to researcher subagent. |
+| "/customer-segmentation [business]" | `/customer-segmentation` | Consulting OS — Map stage. Segments by need/behavior, scores on attractiveness × fit, names priority tier. |
+| "/profit-pool-analysis [market]" | `/profit-pool-analysis` | Consulting OS — Map stage. Where margin concentrates in the value chain, capture opportunities, extraction risks. |
 | Pipeline review | Built-in (Pipeline Pulse task) | Uses HubSpot MCP directly |
 | Krisp transcript available | Built-in (Action Item Extraction task) | Extracts action items + due dates |
 | Monday calendar check | Built-in (Calendar + BD Block task) | Uses Calendar MCP |
@@ -34,7 +38,8 @@ Peter reads this before routing any task. Match the input to the first rule that
 Engagement backbone: Diagnose → Map → Choose → Execute → Govern → Communicate. Built one stage at a time; not wired into Peter's recurring jobs. These are deliverable tools Corinna invokes when working a client engagement or a strategic call for Zaradigm — Peter does not auto-trigger them.
 
 - **Diagnose:** `situation-assessment`, `growth-barriers`, `assumption-audit` (built)
-- **Map, Choose, Execute, Govern, Communicate:** pending — built only after the Diagnose stage is reviewed and approved.
+- **Map:** `market-mapping`, `competitive-intel`, `customer-segmentation`, `profit-pool-analysis` (built)
+- **Choose, Execute, Govern, Communicate:** pending.
 
 ---
 
