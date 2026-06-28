@@ -25,6 +25,10 @@ Peter reads this before routing any task. Match the input to the first rule that
 | "/competitive-intel [subject]" | `/competitive-intel` | Consulting OS — Map stage. Competitor profiles, whitespace, biggest threat. Routes specific competitor data to researcher subagent. |
 | "/customer-segmentation [business]" | `/customer-segmentation` | Consulting OS — Map stage. Segments by need/behavior, scores on attractiveness × fit, names priority tier. |
 | "/profit-pool-analysis [market]" | `/profit-pool-analysis` | Consulting OS — Map stage. Where margin concentrates in the value chain, capture opportunities, extraction risks. |
+| "/strategic-options [context]" | `/strategic-options` | Consulting OS — Choose stage. MECE option set, evaluated and ranked, with locked recommendation. Heavier version of /debate. |
+| "/pricing-strategy [offer]" | `/pricing-strategy` | Consulting OS — Choose stage. Value-based price architecture — anchor / primary / entry — with competitive framing. |
+| "/business-case-builder [decision]" | `/business-case-builder` | Consulting OS — Choose stage. Unit economics, sensitivity scenarios, go/no-go threshold. |
+| "/portfolio-review [scope]" | `/portfolio-review` | Consulting OS — Choose stage. Classifies offers by growth × margin, surfaces resource misalignment, names highest-leverage shift. |
 | Pipeline review | Built-in (Pipeline Pulse task) | Uses HubSpot MCP directly |
 | Krisp transcript available | Built-in (Action Item Extraction task) | Extracts action items + due dates |
 | Monday calendar check | Built-in (Calendar + BD Block task) | Uses Calendar MCP |
@@ -39,7 +43,8 @@ Engagement backbone: Diagnose → Map → Choose → Execute → Govern → Comm
 
 - **Diagnose:** `situation-assessment`, `growth-barriers`, `assumption-audit` (built)
 - **Map:** `market-mapping`, `competitive-intel`, `customer-segmentation`, `profit-pool-analysis` (built)
-- **Choose, Execute, Govern, Communicate:** pending.
+- **Choose:** `strategic-options`, `pricing-strategy`, `business-case-builder`, `portfolio-review` (built)
+- **Execute, Govern, Communicate:** pending.
 
 ---
 
