@@ -29,6 +29,16 @@ Peter reads this before routing any task. Match the input to the first rule that
 | "/pricing-strategy [offer]" | `/pricing-strategy` | Consulting OS — Choose stage. Value-based price architecture — anchor / primary / entry — with competitive framing. |
 | "/business-case-builder [decision]" | `/business-case-builder` | Consulting OS — Choose stage. Unit economics, sensitivity scenarios, go/no-go threshold. |
 | "/portfolio-review [scope]" | `/portfolio-review` | Consulting OS — Choose stage. Classifies offers by growth × margin, surfaces resource misalignment, names highest-leverage shift. |
+| "/operating-model-design [strategy]" | `/operating-model-design` | Consulting OS — Execute stage. Capabilities, decision rights, automation candidates, operating gaps. |
+| "/initiative-prioritizer [list]" | `/initiative-prioritizer` | Consulting OS — Execute stage. Scores by impact × effort × dependency, sequences Now / Next / Later / Drop. |
+| "/transformation-roadmap [strategy]" | `/transformation-roadmap` | Consulting OS — Execute stage. Phased roadmap with milestones, critical path, and week-by-week first 30 days. |
+| "/war-gaming [strategy]" | `/war-gaming` | Consulting OS — Govern stage. Adversarial scenarios, vulnerability exposed, pre-emptive responses. |
+| "/risk-and-mitigation [initiative]" | `/risk-and-mitigation` | Consulting OS — Govern stage. Risk inventory scored by likelihood × impact, mitigations, early warning indicators. |
+| "/kpi-architect [strategy]" | `/kpi-architect` | Consulting OS — Govern stage. Outcome / operating / activity metric hierarchy with thresholds and review cadence. |
+| "/value-realization [strategy]" | `/value-realization` | Consulting OS — Govern stage. Actuals vs. expected, variance diagnosis, course correction. The skill most people skip. |
+| "/stakeholder-alignment [initiative]" | `/stakeholder-alignment` | Consulting OS — Communicate stage. Power × alignment map, gap diagnosis, influence plan and sequencing. |
+| "/narrative-builder [analysis]" | `/narrative-builder` | Consulting OS — Communicate stage. Pyramid Principle structure — answer first, 3 arguments, hostile Q&A. Hands off to draft-writer. |
+| "/decision-memo [decision]" | `/decision-memo` | Consulting OS — Communicate stage. One-page SCQA memo — situation, complication, recommendation, risk, ask. Hands off to draft-writer. |
 | Pipeline review | Built-in (Pipeline Pulse task) | Uses HubSpot MCP directly |
 | Krisp transcript available | Built-in (Action Item Extraction task) | Extracts action items + due dates |
 | Monday calendar check | Built-in (Calendar + BD Block task) | Uses Calendar MCP |
@@ -44,7 +54,9 @@ Engagement backbone: Diagnose → Map → Choose → Execute → Govern → Comm
 - **Diagnose:** `situation-assessment`, `growth-barriers`, `assumption-audit` (built)
 - **Map:** `market-mapping`, `competitive-intel`, `customer-segmentation`, `profit-pool-analysis` (built)
 - **Choose:** `strategic-options`, `pricing-strategy`, `business-case-builder`, `portfolio-review` (built)
-- **Execute, Govern, Communicate:** pending.
+- **Execute:** `operating-model-design`, `initiative-prioritizer`, `transformation-roadmap` (built)
+- **Govern:** `war-gaming`, `risk-and-mitigation`, `kpi-architect`, `value-realization` (built)
+- **Communicate:** `stakeholder-alignment`, `narrative-builder`, `decision-memo` (built)
 
 ---
 
